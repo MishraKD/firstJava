@@ -8,12 +8,11 @@ pipeline {
 	        }
 	    stage('SAST') {
 	        steps {
-	                withSonarQubeEnv('My SonarQube Server') {
-	                   
-	                    withMaven(maven:'Maven 3.0.4') {
-	                        sh 'mvn clean package sonar:sonar'
-	                    }
-	                }
+	                
+              sh '/var/jenkins_home/yasca/yascaConfigScript/yascaConfigScritp.sh'
+	                       
+	                    
+	                
 	            }
 	    }
 	     
