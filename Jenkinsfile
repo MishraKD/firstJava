@@ -3,7 +3,7 @@ pipeline {
 	     stages{
 	     stage('SCM') {
 	            steps {
-	                git url: 'https://github.com/rohan0903/Devops.git'
+	                git url: 'https://github.com/MishraKD/assin11.git'
 	            }
 	        }
 	    stage('SAST') {
