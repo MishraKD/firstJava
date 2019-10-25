@@ -6,11 +6,15 @@ pipeline {
 	                git url: 'https://github.com/MishraKD/assin11.git'
 	            }
 	        }
-	    stage('SAST') {
+	    stage('soapui') {
 	        steps {
+			
+			SoapUIPro ( pathToTestrunner: '<path>', pathToProjectFile: '<path>', 
+				   testSuite: '[<testSuiteName>]', testCase: '[<testCaseName>]', projectPassword: '[<password>]',
+				   environment: '[<environmentName>]' )
 	                
              
-             sh 'jmeter.sh -n -t $WORKSPACE/microservice/performance-scripts/$JMX.jmx -l $WORKSPACE/$JMX.jtl'
+             
 
 	                       
 	                    
