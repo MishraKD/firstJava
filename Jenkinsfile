@@ -3,7 +3,7 @@ pipeline {
 	     stages{
 	     stage('SCM') {
 	            steps {
-	                git url: 'https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/DevopMicro'
+	                git url: ''
 	            }
 	        }
 	    stage('soapui') {
