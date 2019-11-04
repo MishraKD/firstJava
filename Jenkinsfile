@@ -13,7 +13,7 @@ pipeline {
              // PERFORMANCE_PATH="/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin"
 			
             //cd '$PERFORMANCE_PATH'
-               sh 'jmeter -n -t $WORKSPACE/microservice/performance-scripts/$JMX.jmx -l $WORKSPACE/$JMX.jtl'
+               sh 'jmeter -Jjmeter.save.saveservice.output_format=xml -n -t $WORKSPACE/microservice/performance-scripts/$JMX.jmx -l $WORKSPACE/$JMX.jtl'
 	                       
 	                    
 	                
