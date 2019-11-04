@@ -1,14 +1,15 @@
 pipeline {
 		     agent any
+	 dir('jmeter') {
+        sh "./mvnw clean install -DskipTests"
+			     }
 		     stages{
 		     stage('SCM') {
 		            steps {
 		                git url: 'https://github.com/MishraKD/assin11.git'
 		            }
 		        }
-			     dir('jmeter') {
-        sh "./mvnw clean install -DskipTests"
-			     }
+			    
 		    stage('performance Testing') {
 	        steps {
 			//sh '/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin/microservice/performance-scripts'
