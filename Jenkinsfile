@@ -1,8 +1,6 @@
 pipeline {
 		     agent any
-	 dir('jmeter') {
-        sh "./mvnw clean install -DskipTests"
-			     }
+	
 		     stages{
 		     stage('SCM') {
 		            steps {
@@ -17,7 +15,8 @@ pipeline {
              // PERFORMANCE_PATH="/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin"
 			
             //cd '$PERFORMANCE_PATH'
-               sh 'jmeter -Jjmeter.save.saveservice.output_format=xml -n -t $WORKSPACE/microservice/performance-scripts/$JMX.jmx -l $WORKSPACE/$JMX.jtl'
+			 sh "./mvnw clean install -DskipTests"
+               //sh 'jmeter -Jjmeter.save.saveservice.output_format=xml -n -t $WORKSPACE/microservice/performance-scripts/$JMX.jmx -l $WORKSPACE/$JMX.jtl'
 	                       
 	                    
 	                
