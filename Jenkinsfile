@@ -6,15 +6,20 @@ pipeline {
 		                git url: 'https://github.com/MishraKD/assin11.git'
 		            }
 		        }
-		    stage('SAST') {
+		    stage('performance Testing') {
 	        steps {
+			sh '/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin/jmeter.sh'
 	                
-              sh '/var/jenkins_home/yasca/yascaConfigScript/yascaConfigScritp.sh'
+             // PERFORMANCE_PATH="/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin"
+			
+            //cd '$PERFORMANCE_PATH'
+               //sh 'jmeter.sh -n -t $WORKSPACE/microservice/performance-scripts/$JMX.jmx -l $WORKSPACE/$JMX.jtl'
 	                       
 	                    
 	                
 	            }
 	    }
+
 
 		     
 		     }
