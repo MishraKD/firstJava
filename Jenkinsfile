@@ -8,7 +8,7 @@ pipeline {
 		        }
 		    stage('performance Testing') {
 	        steps {
-			sh '/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin/jmeter.sh'
+			sh '/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin/microservice/performance-scripts'
 	                
              // PERFORMANCE_PATH="/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin"
 			
