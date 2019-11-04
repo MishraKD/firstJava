@@ -9,11 +9,12 @@ pipeline {
 		    stage('codeQuality & analysis') {
 		        steps {
 		                withSonarQubeEnv('sonar') {
-					sh 'mvn clean package sonar:sonar'
+					
 		                   
-		                   // withMaven(maven:'Maven 3.6.2') {
+		                    withMaven(maven:'M2_HOME') {
+					    sh 'mvn clean package sonar:sonar'
 		                        
-		                   // }
+		                    }
 		                }
 		            }
 		    }
