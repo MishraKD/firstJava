@@ -11,7 +11,7 @@ pipeline {
 		    stage('performance Testing') {
 	        steps {
 			//bat 'c:/jmeter/bin/jmeter.bat -n -t c:/jmeter/extras/Test.jmx -l test.jtl'
-			sh '/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin/jmeter.sh'
+			sh '/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin/jmeter.sh -n -t $WORKSPACE/microservice/performance-scripts/$JMX.jmx -l $WORKSPACE/$JMX.jtl'
 	                
              // PERFORMANCE_PATH="/var/jenkins_home/JMeter/jakarta-jmeter-2.5/bin"
 		//microservice/performance-scripts	
