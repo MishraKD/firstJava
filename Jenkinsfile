@@ -3,19 +3,14 @@ pipeline {
 	
 	stages {
 
-        stage('code-quality') {
-
-            when {
-
-                branch 'master'
-
-            }
-
-            steps {
-
-                script {
-
-                                   withSonarQubeEnv('sonar') {
+             stage('SCM') {
+		            steps {
+		                git url: 'https://github.com/MishraKD/assin11.git'
+		            }
+		        }
+		    stage('codeQuality & analysis') {
+		        steps {
+		                withSonarQubeEnv('sonar') {
 					
 		                   
 		                    withMaven(maven:'M2_HOME') {
@@ -23,14 +18,7 @@ pipeline {
 		                        
 		                    }
 		                }
-
-                    
-
-                }
-
-            }
-
-        }
+		            }
 
     }
 }
