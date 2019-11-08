@@ -3,7 +3,7 @@ pipeline {
 	stages {
 				    stage('codeQuality & analysis') {
 		        steps {
-				git url: 'https://github.com/MishraKD/assin11.git'
+				
 		                withSonarQubeEnv('sonar') {
 					
 		                   
@@ -32,8 +32,7 @@ pipeline {
 		
 		stage('DeployToProduction') {
              steps {
-		     git url: 'https://github.com/MishraKD/assin11.git'
-
+		     
             
              kubernetesDeploy(
 
