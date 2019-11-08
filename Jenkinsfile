@@ -8,27 +8,7 @@ pipeline {
 		                git url: 'https://github.com/MishraKD/assin11.git'
 		            }
 		        }
-		    stage('codeQuality & analysis') {
-		        steps {
-		                withSonarQubeEnv('sonar') {
-					
-		                   
-		                    withMaven(maven:'M2_HOME') {
-					    sh 'mvn clean package sonar:sonar'
-		                        
-		                    }
-		                }
-		            }
-		       }
-                        		    stage('SAST') {
-	        steps {
-	                
-              sh '/var/jenkins_home/yasca/yascaConfigScript/yascaConfigScritp.sh'
-	                       
-	                    
-	                
-	            }
-	    }
+		    
 
 		
 		stage('DeployToProduction') {
@@ -47,13 +27,6 @@ pipeline {
             }
 		}
 		
-			    stage('soapui') {
-	        steps {
-			
-			sh '/var/jenkins_home/soapui/SoapUI-5.2.1/bin/testrunner.sh -s"TestSuite 1" -c"TestCase 1" -r /var/jenkins_home/workspace/KuberTesting2_SoapUi/REST-Project-1-soapui-project.xml'
-	                
-              }
-           }
 		
 		stage('performance Testing') {
 		        steps {
