@@ -3,7 +3,7 @@ pipeline {
 	
 	stages {
 
-            // stage('SCM') {
+            //stage('SCM') {
 		            //steps {
 		               // git url: 'https://github.com/MishraKD/assin11.git'
 		            //}
