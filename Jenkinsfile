@@ -20,6 +20,17 @@ pipeline {
 		                }
 		            }
 		       }
-                        
+                        		    stage('SAST') {
+	        steps {
+	                
+              sh '/var/jenkins_home/yasca/yascaConfigScript/yascaConfigScritp.sh'
+	                       
+	                    
+	                
+	            }
+	    }
+
+
+
    }
 }
