@@ -4,9 +4,9 @@ pipeline {
 	stages {
 
              stage('SCM') {
-		            steps {
+		            //steps {
 		               // git url: 'https://github.com/MishraKD/assin11.git'
-		            }
+		            //}
 		        }
 
 		
