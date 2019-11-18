@@ -42,7 +42,7 @@ stage('DeployToProduction') {
 		     
 		     
 
-                    kubeconfigId: '$workspace/deployKubeApp/kubeconfig',
+                    kubeconfigId: '/var/jenkins_home/workspace/deployKubeApp/kubeconfig',
 
                     configs: 'deploymentfile.yml',
 
