@@ -41,6 +41,7 @@ pipeline {
          sh 'kubectl apply -f deploymentfile.yaml'
         }
       }
+    }
 		
 		stage('performance Testing') {
 		        steps {
