@@ -35,23 +35,12 @@ pipeline {
 
             
 
-		
-		stage('DeployToProduction') {
-             steps {
-		     
-            
-             kubernetesDeploy(
-
-                    kubeconfigId: 'kubeconfig',
-
-                    configs: 'deploymentfile.yml',
-
-                    enableConfigSubstitution: true   
-             )
-
-            }
-		}
-		
+		stage('Apply Kubernetes Files') {
+      steps {
+          withKubeConfig([credentialsId: 'kubeconfig']) {
+         sh 'kubectl apply -f deploymentfile.yaml'
+        }
+      }
 		
 		stage('performance Testing') {
 		        steps {
