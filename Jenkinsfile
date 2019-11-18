@@ -47,7 +47,7 @@ stage('DeployToProduction') {
 
                     kubeconfigId: 'kubeconfig1',
 
-                    configs: 'deploymentfile.yml',
+                    configs: '/var/jenkins_home/workspace/deploymentfile.yml',
 
                     enableConfigSubstitution: true   
              )
