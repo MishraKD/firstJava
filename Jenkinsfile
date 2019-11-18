@@ -5,6 +5,7 @@ agent any
 		           
 				    stage('codeQuality & analysis') {
 		        steps {
+				git url: 'https://github.com/MishraKD/assin11.git'
 				
 		                withSonarQubeEnv('sonar') {
 					
@@ -16,16 +17,6 @@ agent any
 		                }
 		            }
 		       }
-                        		    stage('SAST') {
-	        steps {
-	                
-              sh '/var/jenkins_home/yasca/yascaConfigScript/yascaConfigScritp.sh'
-	                       
-	                    
-	                
-	            }
-	    }
-
 
 
 
@@ -39,7 +30,7 @@ agent any
             
 stage('DeployToProduction') {
              steps {
-		  git url: 'https://github.com/MishraKD/assin11.git'
+		  
             
              kubernetesDeploy(
 		     
