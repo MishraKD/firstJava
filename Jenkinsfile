@@ -5,6 +5,7 @@ pipeline {
 	}
 	
 agent any	
+	stages{
 		           
 				    stage('codeQuality & analysis') {
 		        steps {
@@ -56,7 +57,7 @@ stage('DeployToProduction') {
 
 
    }
-
+}
 
              
 
